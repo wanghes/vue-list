@@ -87,6 +87,8 @@ export default {
         totalPages() {
             return this.dataset.last_page;
         },
+
+        /**
          * Load the next page of data
          */
         next() {
@@ -106,12 +108,16 @@ export default {
          * @param data
          */
         paginate(data) {
-            this.pagination.current_page  = data.current_page;
-            this.pagination.last_page     = data.last_page;
-            this.pagination.next_page_url = data.next_page_url;
-            this.pagination.prev_page_url = data.prev_page_url;
-            this.pagination.to            = data.to;
-            this.pagination.from          = data.from;
+            this.dataset = {
+                current_page: data.current_page,
+                last_page: data.last_page,
+                next_page_url: data.next_page_url,
+                prev_page_url: data.prev_page_url,
+                to: data.to,
+                from: data.from,
+                per_page: data.per_page,
+                total: data.total
+            }
         }
     }
 }
