@@ -1,5 +1,7 @@
 # Vue-List
-A Vue.js component designed to handle common functionality needed when handling lists of data
+A Vue.js component designed to handle common functionality needed when handling lists of data.
+
+<strong>This is not ready for use in production</strong>
 ## Setup
 
 ### bootstrap.js file
