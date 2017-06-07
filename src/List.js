@@ -50,6 +50,15 @@ export default {
 
             this.dataset.items.length = 0;
         },
+
+        /**
+         * Add an item to our dataset
+         *
+         * @param item
+         */
+        add(item) {
+            this.dataset.items.push(item);
+        },
          * Load the next page of data
          */
         next() {
