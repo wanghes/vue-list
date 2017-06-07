@@ -34,6 +34,22 @@ export default {
         },
 
         /**
+         * Reset the items array to being an empty array
+         */
+        reset() {
+            this.dataset = {
+                current_page: 0,
+                last_page: 0,
+                next_page_url: '',
+                prev_page_url: '',
+                to: 0,
+                from: 0,
+                per_page: 0,
+                total: 0
+            }
+
+            this.dataset.items.length = 0;
+        },
          * Load the next page of data
          */
         next() {
