@@ -22,14 +22,15 @@ export default {
          * @param url
          */
         fetch(url) {
-            this.items = [];
             this.$http.get(url).then((response) => {
-                // Add response items to our items property array
-                response.data.data.forEach((item) => {
-                    this.items.push(item);
-                })
-
+                this.reset();
                 this.paginate(response.data);
+                response.data.data.forEach((item) => {
+                    this.add(item);
+                });
+                this.$emit('fetch-completed', error.response.data);
+            }).catch(error => {
+                this.$emit('fetch-failed', error.response.data);
             });
         },
 
