@@ -10,6 +10,7 @@ export default {
             next_page_url: '',
             to: 0,
             from: 0,
+            per_page: 0,
             total: 0
         }
     }),
