@@ -59,6 +59,33 @@ export default {
         add(item) {
             this.dataset.items.push(item);
         },
+
+        /**
+         * The number of items in our list
+         *
+         * @returns {number|Number}
+         */
+        count() {
+            return this.dataset.total;
+        },
+
+        /**
+         * The current page of our dataset
+         *
+         * @returns {string|number|*}
+         */
+        currentPage() {
+            return this.dataset.current_page;
+        },
+
+        /**
+         * Total number of pages in our dataset
+         *
+         * @returns {string|*}
+         */
+        totalPages() {
+            return this.dataset.last_page;
+        },
          * Load the next page of data
          */
         next() {
