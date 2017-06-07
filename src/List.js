@@ -2,7 +2,16 @@ export default {
     props: ['url'],
 
     data: () => ({
-        items: []
+        dataset: {
+            items: [],
+            current_page: '',
+            last_page: '',
+            prev_page_url: '',
+            next_page_url: '',
+            to: 0,
+            from: 0,
+            total: 0
+        }
     }),
 
     methods: {
