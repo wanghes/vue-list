@@ -6,11 +6,11 @@
 </style>
 <template>
     <div class="v-paginator">
-        <button class="btn btn-default" @click="prev()" :disabled="!paginator.prev_page_url">
+        <button class="btn btn-default" @click="prev()" :disabled="!dataset.prev_page_url">
             Prev Page
         </button>
-        <span>Page {{paginator.current_page}} of {{paginator.last_page}}</span>
-        <button class="btn btn-default" @click="next()" :disabled="!paginator.next_page_url">
+        <span>Page {{dataset.current_page}} of {{dataset.last_page}}</span>
+        <button class="btn btn-default" @click="next()" :disabled="!dataset.next_page_url">
             Next Page
         </button>
     </div>
@@ -18,7 +18,7 @@
 <script>
     export default {
 
-        props: ['paginator'],
+        props: ['dataset'],
 
         methods: {
             next() {

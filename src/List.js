@@ -92,14 +92,14 @@ export default {
          * Load the next page of data
          */
         next() {
-            this.fetch(this.pagination.next_page_url);
+            this.fetch(this.dataset.next_page_url);
         },
 
         /**
          * Load the Previous Page of Data
          */
         prev() {
-            this.fetch(this.pagination.prev_page_url);
+            this.fetch(this.dataset.prev_page_url);
         },
 
         /**
