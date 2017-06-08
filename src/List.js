@@ -67,7 +67,6 @@ export default {
          * @param item
          */
         add(item) {
-            console.log(this.dataset.items);
             this.dataset.items.push(item);
         },
 
