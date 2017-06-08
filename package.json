@@ -1,7 +1,7 @@
 {
   "name": "vue-list",
   "description": "A Vue.js component designed to handle common functionality needed when handling lists of data for Laravel",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "src/List.js",
   "repository": "andyleach/vue-list",
   "author": "andyleach",
