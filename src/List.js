@@ -28,10 +28,20 @@ export default {
                 response.data.data.forEach((item) => {
                     this.add(item);
                 });
-                this.$emit('fetch-completed', error.response.data);
-            }).catch(error => {
-                this.$emit('fetch-failed', error.response.data);
             });
+        },
+
+        /**
+         * Remove an item from the dataset
+         *
+         * @param item
+         */
+        remove(item) {
+            this.$http.delete(this.url + '/' + item.id).then((response) => {
+                this.dataset.items.splice(
+                    this.dataset.items.indexOf(item), 1
+                );
+            })
         },
 
         /**
@@ -39,6 +49,7 @@ export default {
          */
         reset() {
             this.dataset = {
+                items: [],
                 current_page: 0,
                 last_page: 0,
                 next_page_url: '',
@@ -48,8 +59,6 @@ export default {
                 per_page: 0,
                 total: 0
             }
-
-            this.dataset.items.length = 0;
         },
 
         /**
@@ -58,6 +67,7 @@ export default {
          * @param item
          */
         add(item) {
+            console.log(this.dataset.items);
             this.dataset.items.push(item);
         },
 
@@ -109,6 +119,7 @@ export default {
          */
         paginate(data) {
             this.dataset = {
+                items: [],
                 current_page: data.current_page,
                 last_page: data.last_page,
                 next_page_url: data.next_page_url,
